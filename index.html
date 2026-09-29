@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clément Soubrier — Mathematics, UBC</title>
+<meta name="description" content="Clément Soubrier, PhD student in Mathematics at the University of British Columbia. Mathematical biology, modelling of cell shape and growth.">
+<meta name="author" content="Clément Soubrier">
+
+<style>
+:root {
+  --bg:        #fcfcfa;
+  --surface:   #ffffff;
+  --border:    #e2e0da;
+  --text:      #1b1e22;
+  --muted:     #5c6570;
+  --accent:    #a8452f;
+  --link:      #1f5f66;
+  --link-hover:#a8452f;
+  --rule:      #d8d5cd;
+  --shadow:    0 1px 2px rgba(20,24,28,.05), 0 6px 20px rgba(20,24,28,.05);
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #14171a;
+    --surface:   #1b1f23;
+    --border:    #2b3137;
+    --text:      #e4e7ea;
+    --muted:     #9aa4ae;
+    --accent:    #e39274;
+    --link:      #7cc4c9;
+    --link-hover:#e39274;
+    --rule:      #2b3137;
+    --shadow:    0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px 72px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--link) 32%, transparent);
+  transition: color .15s ease, border-color .15s ease;
+}
+a:hover, a:focus-visible {
+  color: var(--link-hover);
+  border-bottom-color: currentColor;
+}
+
+/* ---------- Header ---------- */
+
+header.masthead {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 44px;
+  align-items: start;
+  padding: 64px 0 44px;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 .3rem;
+}
+
+.role {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--accent);
+  margin: 0 0 1.6rem;
+}
+
+.contact {
+  font-size: .95rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin: 0 0 1.2rem;
+}
+.contact strong { color: var(--text); font-weight: 600; }
+
+.affil { margin: 0 0 .5rem; font-size: .97rem; }
+
+.portrait {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+/* ---------- Notice card ---------- */
+
+.notice {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 18px 22px;
+  margin: 0 0 56px;
+  font-size: .97rem;
+  box-shadow: var(--shadow);
+}
+.notice p { margin: 0 0 .6rem; }
+.notice p:last-child { margin-bottom: 0; }
+
+/* ---------- Sections ---------- */
+
+section { margin-bottom: 56px; }
+
+h2 {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.1rem;
+  padding-bottom: .45rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+  font-family: var(--sans);
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-weight: 650;
+  color: var(--muted);
+  margin: 2rem 0 .8rem;
+}
+
+p { margin: 0 0 1rem; }
+
+ul.items {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+ul.items li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: .6rem;
+}
+ul.items li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .72em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+ul.items .venue {
+  display: block;
+  font-size: .87rem;
+  color: var(--muted);
+}
+
+/* ---------- Current course ---------- */
+
+.course-now {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px 22px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.6rem;
+}
+.course-now .term {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: var(--accent);
+  font-weight: 650;
+  display: block;
+  margin-bottom: .3rem;
+}
+.course-now .title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  margin: 0 0 .5rem;
+}
+.course-now p { margin: 0; font-size: .95rem; color: var(--muted); }
+
+/* ---------- Past courses ---------- */
+
+.courses {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px 28px;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+.courses li {
+  display: flex;
+  gap: .7rem;
+  padding: .3rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: .94rem;
+}
+.courses .code {
+  flex: 0 0 auto;
+  min-width: 6.6rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--accent);
+}
+.courses .name { color: var(--muted); }
+
+.aside-note {
+  font-size: .9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+footer.pagefoot {
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  font-size: .85rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  justify-content: space-between;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 680px) {
+  body { font-size: 16px; }
+  .wrap { padding: 0 20px 56px; }
+  header.masthead {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 40px 0 32px;
+  }
+  .portrait-wrap { max-width: 280px; }
+  .courses { grid-template-columns: 1fr; }
+  section { margin-bottom: 44px; }
+}
+
+@media print {
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .notice, .course-now { box-shadow: none; }
+  a { color: #000; border: 0; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div>
+      <h1>Clément Soubrier</h1>
+      <p class="role">Postdoctoral fellow</p>
+
+      <p class="contact">
+        <strong>Department of Mathematics</strong><br>
+        University of British Columbia<br>
+        Room 311F, Leonard S. Klinck Building<br>
+        Vancouver, BC, V6T 1Z2, Canada<br>
+        <a href="mailto:c.soubrier@math.ubc.ca">c.soubrier@math.ubc.ca</a>
+      </p>
+
+      <p class="affil">
+        Supervised by <a href="https://kdaoduc.com/">Khanh Dao Duc</a>
+      </p>
+    </div>
+
+    <div class="portrait-wrap">
+      <img class="portrait" src="photo.png" alt="Clément Soubrier" loading="lazy">
+    </div>
+  </header>
+
+  <div class="notice">
+    <!-- TODO: replace with a short announcement, or delete this block -->
+    <p>I am currently working on the mathematical modelling of bacterial shape and growth.</p>
+  </div>
+
+  <section id="research">
+    <h2>Research</h2>
+    
+
+
+    <h3>Papers and preprints</h3>
+    <ul class="items">
+      <li>
+        <a href="https://arxiv.org/abs/2608.27774">Beyond Procrustes distances: a multilinear Gromov&ndash;Wasserstein distance capturing chirality</a>
+        <span class="venue">with G. Woollard, A. Warren, K. Dao Duc &middot; arXiv preprint, 2026</span>
+      </li>
+      <li>
+        <a href="https://arxiv.org/abs/2512.04218">Time of appearance of a large gap in a dynamic Poisson point process</a>
+        <span class="venue">with E. Foxall &middot; arXiv preprint, 2025</span>
+      </li>
+      <li>
+        <a href="https://doi.org/10.1101/2025.01.17.633629">Quantifying the organization and dynamics of <em>M. smegmatis</em> morphology from long-term time-lapse atomic force microscopy</a>
+        <span class="venue">with A. Madzvamuse, H. A. Eskandarian, K. Dao Duc &middot; bioRxiv preprint, 2025</span>
+      </li>
+      <li>
+        <a href="https://doi.org/10.1098/rsif.2023.0652">Optimal control of ribosome population for gene expression under periodic nutrient intake</a>
+        <span class="venue">with E. Foxall, L. Ciandrini, K. Dao Duc &middot; <em>Journal of the Royal Society Interface</em>, 2024 &middot; <a href="https://arxiv.org/abs/2401.06294">arXiv</a></span>
+      </li>
+    </ul>
+
+    <h3>Talks</h3>
+    <ul class="items">
+      <li>
+        <!-- TODO: add title and link -->
+        Talk at the <a href="https://meetings.ams.org/math/jmm2023/meetingapp.cgi/Person/20426">Joint Mathematics Meetings 2023</a>
+        <span class="venue">Boston, January 2023</span>
+      </li>
+      <li>
+        <!-- TODO: remove if you did not present -->
+        <a href="https://www.iam.ubc.ca/events/event/iam-annual-retreat-2024/">IAM Annual Retreat 2024</a>
+        <span class="venue">Institute of Applied Mathematics, UBC</span>
+      </li>
+    </ul>
+    <h3>PhD thesis</h3>
+    <ul class="items">
+      <li>
+        It can be found  <a href="https://open.library.ubc.ca/soa/cIRcle/collections/ubctheses/24/items/1.0456115?o=0">here</a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+
+    <div class="course-now">
+      <span class="term">2026 Winter Term 1   </span>
+      <p class="title">MATH 100 &mdash; Differential Calculus with Applications </p>
+      <p>Small class instructor </p>
+    </div>
+
+    <h3>Previously at UBC</h3>
+    <ul class="courses">
+      <li><span class="code">MATH 180 </span><span class="name">Differential Calculus (Small class instructor, 2025 Winter Term 1) </span></li>
+      <li><span class="code">MATH 406 </span><span class="name">Variational and Approximate Methods in Applied Mathematics (Teaching Assistant, 2024 Winter Term 2)  </span></li>
+      <li><span class="code">MATH 180 </span><span class="name">Differential Calculus (Small class instructor, 2024 Winter Term 1)  </span></li>
+      <li><span class="code">MATH 307 </span><span class="name">Applied Linear Algebra (Teaching Assistant, 2023 Winter Term 1)  </span></li>
+      <li><span class="code">MATH 253 </span><span class="name">Multivariable Calculus (Teaching Assistant, 2022 Winter Term 1)  </span></li>
+       
+
+    </ul>
+  </section>
+
+  <section id="cv">
+    <h2>Short CV</h2>
+    <!-- TODO: replace with your background -->
+    <p>
+      Before coming to UBC, I studied at &hellip;
+    </p>
+    <p><a href="CV_Soubrier.pdf">Here</a> is a more complete version.</p>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Clément Soubrier &middot; Department of Mathematics, UBC</span>
+    <span><a href="mailto:c.soubrier@math.ubc.ca">c.soubrier@math.ubc.ca</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
