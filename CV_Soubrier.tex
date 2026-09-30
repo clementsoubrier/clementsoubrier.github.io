@@ -1,0 +1,111 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{A8452F}   % same orange as the website
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Section titles: small caps with a thin rule
+\titleformat{\section}{\large\scshape\color{accent}}{}{0pt}{}[\vspace{-0.6em}\textcolor{accent}{\rule{\linewidth}{0.4pt}}]
+\titlespacing*{\section}{0pt}{1em}{0.5em}
+
+% One CV line: date on the left, content on the right
+\newcommand{\entry}[2]{%
+  \noindent\parbox[t]{3cm}{\raggedright\strut #1}%
+  \parbox[t]{\dimexpr\linewidth-3cm}{#2}\par\vspace{0.35em}}
+
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+  {\LARGE\bfseries Clément Soubrier}\\[0.3em]
+  Postdoctoral Fellow in Mathematics\\[0.3em]
+  Department of Mathematics, University of British Columbia\\
+  Room 311F, Leonard S. Klinck Building, Vancouver, BC, V6T 1Z2, Canada\\[0.2em]
+  \href{mailto:c.soubrier@math.ubc.ca}{c.soubrier@math.ubc.ca} \quad$\cdot$\quad
+  \href{https://clementsoubrier.github.io}{clementsoubrier.github.io}
+  % \quad$\cdot$\quad +1~236~339~7172
+\end{center}
+
+% ---------- Research ----------
+\section{Research interests}
+Mathematical biology, optimal transport, shape analysis, dynamical systems and stochastic processes applied to cell biology.
+
+% ---------- Positions ----------
+\section{Academic positions}
+\entry{2026--present}{\textbf{Postdoctoral Fellow}, University of British Columbia, Vancouver.\\
+  Supervisor: Khanh Dao Duc. Optimal transport methods for super-resolution biological imaging and high-dimensional genomic data.}
+
+% ---------- Education ----------
+\section{Education}
+\entry{2022--2026}{\textbf{PhD in Mathematics}, University of British Columbia, Vancouver.\\
+  Thesis: \emph{\href{https://open.library.ubc.ca/soa/cIRcle/collections/ubctheses/24/items/1.0456115}{Mathematical modeling and analysis of biological shape heterogeneity and cellular growth}}. Supervisor: Khanh Dao Duc.}
+\entry{2018--2022}{\textbf{MSc, Engineering curriculum, Mathematics}, CentraleSupélec, Université Paris-Saclay.\\
+  Maths--Physics and Research track. }
+\entry{2016--2018}{\textbf{Classe préparatoire (MP)}, Lycée Louis-le-Grand, Paris.}
+\entry{2016}{\textbf{Baccalauréat and Abitur (AbiBac)}, Lycée Richelieu, Rueil-Malmaison.}
+
+% ---------- Publications ----------
+\section{Publications and preprints}
+\entry{2026}{\textbf{C.~Soubrier}, G.~Woollard, A.~Warren, K.~Dao Duc. \emph{Beyond Procrustes distances: a multilinear Gromov--Wasserstein distance capturing chirality}. Preprint, \href{https://arxiv.org/abs/2608.27774}{arXiv:2608.27774}.}
+\entry{2025}{E.~Foxall, \textbf{C.~Soubrier}. \emph{Time of appearance of a large gap in a dynamic Poisson point process}. Preprint, \href{https://arxiv.org/abs/2512.04218}{arXiv:2512.04218}.}
+\entry{2025}{\textbf{C.~Soubrier}, A.~Madzvamuse, H.~A.~Eskandarian, K.~Dao Duc. \emph{Quantifying the organization and dynamics of M.~smegmatis morphology from long-term time-lapse atomic force microscopy}. Preprint, \href{https://doi.org/10.1101/2025.01.17.633629}{bioRxiv}.}
+\entry{2024}{\textbf{C.~Soubrier}, E.~Foxall, L.~Ciandrini, K.~Dao Duc. \emph{Optimal control of ribosome population for gene expression under periodic nutrient intake}. Journal of the Royal Society Interface, \href{https://doi.org/10.1098/rsif.2023.0652}{doi:10.1098/rsif.2023.0652}.}
+
+% ---------- Talks ----------
+\section{Talks}
+\entry{May 2026}{\emph{Integrating shape dynamics to enhance cell motility analysis}.\\ BIRS workshop \href{https://www.birs.ca/events/2026/5-day-workshops/26w5573}{A Roadmap towards Developing Mechanobiochemical Models for Single and Collective Cell Migration through Complex Non-Isotropic Environments}, Banff.}
+\entry{Mar.\ 2026}{\emph{The multilinear Gromov--Wasserstein distance and its application to chiral shape comparison}. \\ \href{https://pims.math.ca/events/260312-kikris}{Kantorovich Initiative Retreat}, UBC, Vancouver.}
+\entry{July 2025}{\emph{Modeling the meiotic spindle using a spatial birth-death process}.\\ SMB Annual Meeting, minisymposium \href{https://2025.smb.org/MFBM/MS-MFBM-09-Part-2.html}{Probability and stochastic processes in biology}, Edmonton.}
+\entry{Apr.\ 2024}{\emph{Analyzing morphological properties of M.~smegmatis using temporal data}. \\IAM Annual Retreat, UBC, Vancouver.}
+\entry{Sep.\ 2023}{\emph{End to end pipeline for cell shape dynamics analysis from atomic force microscopy time series}.\\ BIRS workshop \href{https://www.birs.ca/events/2023/5-day-workshops/23w5142}{Mathematical Methods for Exploring and Analyzing Morphological Shapes across Biological Scales}, Banff.}
+\entry{Jan.\ 2023}{\emph{Impact of ribosome population control on the dynamics of protein expression}.\\ Joint Mathematics Meetings, Boston.}
+
+% ---------- Teaching ----------
+\section{Teaching}
+\entry{UBC}{MATH~100, MATH~180, MATH~406, MATH~307, MATH~253}
+
+% % ---------- Research experience ----------
+% \section{Research experience before the PhD}
+% \entry{Apr.--Aug.\ 2022}{\textbf{Research internship}, CEA Cadarache, France.\\
+%   Stochastic homogenisation of an elliptic equation under a Gaussian field approximation, to compute physical properties of nuclear fuel materials.}
+% \entry{2021--2022}{\textbf{Research project in condensed matter theory}, CentraleSupélec.\\
+%   Topological terms in electron transport in skyrmions, in the setting of fibre bundles.}
+% \entry{Apr.--Aug.\ 2021}{\textbf{Research internship}, Department of Mathematics, UBC.\\
+%   Model of gene expression integrating ribosome population maintenance; numerical study of optimal protein production strategies.}
+% \entry{2020--2021}{\textbf{Research internship}, LM2T, CEA Saclay, France.\\
+%   Multiphysics simulation (COMSOL) of an artificial photosynthesis prototype; techno-economic and life-cycle analysis.}
+
+% ---------- Ongoing projects ----------
+% \section{Ongoing projects}
+% \begin{itemize}[leftmargin=1.2em, itemsep=0.1em, topsep=0pt]
+%   \item Cancer cell motility and shape dynamics
+%   \item Modelling of oocyte meiotic spindle defects with Markov processes
+%   \item Optimal transport algorithms for image analysis and genomic data
+% \end{itemize}
+
+
+% ---------- Other ----------
+\section{Awards}
+\entry{2022--2026}{Four year Fellowship, UBC}
+\entry{2021}{Globalink Research Internship Award, Mitacs }
+
+
+
+\section{Languages}
+\begin{itemize}[leftmargin=1.2em, itemsep=0.1em, topsep=0pt]
+    \item French (native)
+    \item English (fluent)
+    \item German (fluent)
+\end{itemize}
+
+
+\end{document}
